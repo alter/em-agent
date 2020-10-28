@@ -4,28 +4,28 @@ web_checks:
     scheme: https
     method: get
     timeout: 5s
-    update_interval: 15s
+    update_interval: 300s
     return_http_code: 304
   - name: waves.exchange
     url: waves.exchange
     scheme: https
     method: get
     timeout: 10s
-    update_interval: 30s
+    update_interval: 900s
   - name: localhost
     url: 127.0.0.1:8000
     scheme: http
-    update_interval: 5
+    update_interval: 30
 port_checks:
   - name: mainnet-aws-fr-1.wavesnodes.com data port
     host: mainnet-aws-fr-1.wavesnodes.com
     port: 6868
     protocol: tcp
     timeout: 3s
-    update_interval: 1m
+    update_interval: 5m
   - name: mainnet-aws-fr-1.wavesnodes.com api port
     host: mainnet-aws-fr-1.wavesnodes.com
     port: 6869
     timeout: 15s
-    update_interval: 30s
+    update_interval: 10m
 
