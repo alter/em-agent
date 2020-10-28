@@ -1,5 +1,5 @@
 # Conception
-##External monitoring system
+## External monitoring system
 ![conception](conception.jpg)  
 1. Developers/QA/Devops/etc describe rules with items for monitoring and push them to git
 2. Monitoring agents(em-agent) make a `git pull` periodically(for example by cron), if there are any changes - restart em-agent
