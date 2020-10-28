@@ -1,3 +1,19 @@
+# Conception
+##External monitoring system
+![conception](conception.jpg)  
+1. Developers/QA/Devops/etc describe rules with items for monitoring and push them to git
+2. Monitoring agents(em-agent) make a `git pull` periodically(for example by cron), if there are any changes - restart em-agent
+3. em-agent outcome could be found at /metrics endpoint
+4. Prometheus has to take data from em-agents
+5. Create graphics in grafana
+6. Write triggers and push alerts to messangers(discord/telegram/slack/etc)
+7. Developers/QA/Devops/etc can get results as graphics and alerts
+
+[github](https://github.com/alter/em-agent)  
+
+## Rules examples
+Look up for examples in a *checks* folder  
+
 # Installation
 ## Requirements
 Python >=3.5  
