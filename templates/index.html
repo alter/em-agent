@@ -1,0 +1,5 @@
+{% if webcheck_results %}
+{%- for key, value in webcheck_results.items() -%}
+web_em_check{label="{{ key }}"} {{ value }}
+{% endfor %}
+{% endif%}
