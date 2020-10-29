@@ -11,7 +11,7 @@ class TimeConverter:
         elif 'h' in self.unit:
             self.unit = self.unit.replace('h', '')
             self.unit = int(self.unit) * 3600
-        return str("{}.2f".format(self.unit))
+        return str("{}".format(self.unit))
 
     def __int__(self):
         if 's' in self.unit:

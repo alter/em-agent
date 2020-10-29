@@ -3,3 +3,10 @@
 web_em_check{label="{{ key }}"} {{ value }}
 {% endfor %}
 {% endif%}
+
+{% if portcheck_results %}
+{%- for key, value in portcheck_results.items() -%}
+port_em_check{label="{{ key }}"} {{ value }}
+{% endfor %}
+{% endif%}
+

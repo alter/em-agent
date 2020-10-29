@@ -24,7 +24,9 @@ app = Flask(__name__)
 app.secret_key = os.urandom(42)
 lock = threading.Lock()
 q_web_checks = Queue()
+q_port_checks = Queue()
 webcheck_results = {}
+portcheck_results = {}
 
 @app.route('/', methods=['GET','POST'])
 def hello():
@@ -32,7 +34,7 @@ def hello():
 
 @app.route('/metrics', methods=['GET'])
 def metrics():
-    resp = make_response(render_template("index.html", webcheck_results = webcheck_results))
+    resp = make_response(render_template("index.html", webcheck_results = webcheck_results, portcheck_results = portcheck_results))
     resp.headers['Content-type'] = 'text/plain; charset=utf-8'
     return resp
 
@@ -54,8 +56,6 @@ def make_web_check(item):
         webcheck_results[webcheck.name] = webcheck.success
 
         sleep(int(TimeConverter(webcheck.update_interval)))
-#        with lock:
-#            print(threading.current_thread().name,webcheck.name)
 
 def web_checks_worker():
     while True:
@@ -72,10 +72,35 @@ def make_web_checks(check_list):
     for x in check_list:
         q_web_checks.put(x)
 
+def make_port_check(item):
+    while True:
+        portcheck = PortCheck(item)
+        portcheck.make_request()
+        portcheck_results[portcheck.name] = portcheck.success
+
+        sleep(int(TimeConverter(portcheck.update_interval)))
+
+def port_checks_worker():
+    while True:
+        item = q_port_checks.get()
+        make_port_check(item)
+        q_port_checks.task_done()
+
+def make_port_checks(check_list):
+    num_threads = len(check_list)
+
+    for i in range(num_threads):
+        worker = threading.Thread(target=port_checks_worker, daemon=True).start()
+
+    for x in check_list:
+        q_port_checks.put(x)
+
+
 def setup_app(app):
     merge_configs()
     checks_config = load_config()
     make_web_checks(checks_config['web_checks'])
+    make_port_checks(checks_config['port_checks'])
 setup_app(app)
 
 

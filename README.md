@@ -26,6 +26,7 @@ Check config.py, you can put any yaml files in config.CHECKS_FOLDER
 # Usage
 ## Put checks in yaml format
 You can set not all options, in that case default values will be used  
+## WebChecks
 It's possible to make GET and POST checks at this moment  
 ```yaml
 web_checks:
@@ -64,6 +65,50 @@ arguments:
 postfields:
 ```
 
+### Results
+*0* - fail
+*1* - success
+
+## PortChecks
+It's possible to check TCP and UDP ports
+
+```yaml
+port_checks:
+  - name: mainnet-aws-fr-2.wavesnodes.com data tcp
+    host: mainnet-aws-fr-2.wavesnodes.com
+    port: 6868
+    protocol: tcp
+    update_interval: 1m
+  - name: mainnet-aws-fr-1.wavesnodes.com api udp
+    host: mainnet-aws-fr-1.wavesnodes.com
+    port: 6869
+    protocol: udp
+    connection_timeout: 10s
+    update_interval: 5m
+  - name: localhost tcp
+    host: 127.0.0.1
+    port: 8000
+    protocol: tcp
+    connection_timeout: 1s
+    update_interval: 30s
+```
+
+### Default values
+```yaml
+name: unreal-ip
+host: 256.256.256.256
+port: 65536
+protocol: tcp
+connection_timeout: 3
+update_interval: 60
+```
+
+### Results
+*0* - fail(port in 'close' state or host isn't accessible)
+*1* - success(port in 'open' state)
+*2* - IDK(port in 'open|filtered' state)
+
+
 ### How to run application
 Launch `./agent.py`  
 Check [http://127.0.0.1:8000/metrics](http://127.0.0.1:8000/metrics)  
@@ -76,6 +121,11 @@ web_em_check{label="zabbix"} 0
 web_em_check{label="postman post"} 1
 web_em_check{label="web3tech.ru"} 1
 
+port_em_check{label="mainnet-aws-fr-2.wavesnodes.com data tcp"} 0
+port_em_check{label="mainnet-aws-fr-1.wavesnodes.com data tcp"} 1
+port_em_check{label="localhost tcp"} 1
+port_em_check{label="mainnet-aws-fr-1.wavesnodes.com api tcp"} 1
+port_em_check{label="mainnet-aws-fr-1.wavesnodes.com api udp"} 2
 ```
 
 ## Apply changes

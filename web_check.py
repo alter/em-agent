@@ -16,7 +16,7 @@ class WebCheck:
         self.connection_timeout = item['connection_timeout'].lower()
         self.update_interval = str(item['update_interval']).lower()
         self.return_http_code = int(item['return_http_code'])
-        self.success = ''
+        self.success = '0'
 
     def get_uri(self):
         arguments = self.arguments
@@ -66,16 +66,4 @@ class WebCheck:
                 pass
             finally:
                 crl.close()
-
-    def time_converter(self, unit):
-        unit = str(unit)
-        if 's' in unit:
-            unit = unit.replace('s', '')
-        elif 'm' in unit:
-            unit = unit.replace('m', '')
-            unit = int(unit) * 60
-        elif 'h' in unit:
-            unit = unit.replace('h', '')
-            unit = int(unit) * 3600
-        return float(unit)
 
