@@ -3,24 +3,23 @@ web_checks:
     url: web3tech.ru
     scheme: https
     method: get
-    timeout: 15s
+    request_timeout: 1s
+    connection_timeout: 1s
     update_interval: 1m
   - name: postman post
     url: postman-echo.com/post
     scheme: https
     method: post
-    timeout: 150s
     postfields: text=super&pass=oops&user=lamer
 port_checks:
   - name: mainnet-aws-fr-2.wavesnodes.com data port
     host: mainnet-aws-fr-2.wavesnodes.com
     port: 6868
     protocol: tcp
-    timeout: 3s
     update_interval: 1m
   - name: mainnet-aws-fr-1.wavesnodes.com api port
     host: mainnet-aws-fr-1.wavesnodes.com
     port: 6869
-    timeout: 25s
+    connection_timeout: 25s
     update_interval: 5m
 

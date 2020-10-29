@@ -68,5 +68,15 @@ postfields:
 Launch `./agent.py`  
 Check [http://127.0.0.1:8000/metrics](http://127.0.0.1:8000/metrics)  
 
+example:  
+```yaml
+web_em_check{label="localhost"} 1
+web_em_check{label="waves.exchange"} 1
+web_em_check{label="zabbix"} 0
+web_em_check{label="postman post"} 1
+web_em_check{label="web3tech.ru"} 1
+
+```
+
 ## Apply changes
 Restart application for using new checks  

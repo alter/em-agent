@@ -1,16 +1,18 @@
 web_checks:
   - name: zabbix
     url: zabbix.wvservices.com
-    scheme: https
+    scheme: http
     method: get
-    timeout: 5s
+    request_timeout: 1s
+    connection_timeout: 1s
     update_interval: 300s
-    return_http_code: 304
+    return_http_code: 200
   - name: waves.exchange
     url: waves.exchange
     scheme: https
     method: get
-    timeout: 10s
+    request_timeout: 3s
+    connection_timeout: 3s
     update_interval: 900s
   - name: localhost
     url: 127.0.0.1:8000
@@ -21,11 +23,11 @@ port_checks:
     host: mainnet-aws-fr-1.wavesnodes.com
     port: 6868
     protocol: tcp
-    timeout: 3s
+    connection_timeout: 3s
     update_interval: 5m
   - name: mainnet-aws-fr-1.wavesnodes.com api port
     host: mainnet-aws-fr-1.wavesnodes.com
     port: 6869
-    timeout: 15s
+    connection_timeout: 15s
     update_interval: 10m
 

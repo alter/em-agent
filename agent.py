@@ -2,8 +2,10 @@
 
 
 from flask import Flask, render_template, make_response
+from time_converter import TimeConverter
 from urllib.parse import urlencode
 from yamlreader import yaml_load
+from port_check import PortCheck
 from web_check import WebCheck
 from pathlib import Path
 from queue import Queue
@@ -34,18 +36,6 @@ def metrics():
     resp.headers['Content-type'] = 'text/plain; charset=utf-8'
     return resp
 
-def time_converter(unit):
-    unit = str(unit)
-    if 's' in unit:
-        unit = unit.replace('s', '')
-    elif 'm' in unit:
-        unit = unit.replace('m', '')
-        unit = int(unit) * 60
-    elif 'h' in unit:
-        unit = unit.replace('h', '')
-        unit = int(unit) * 3600
-    return float(unit)
-
 def merge_configs():
     yamlconfig = yaml_load(config.CHECKS_FOLDER)
     with open(config.DEFAULT_CONFIG, 'wt') as out:
@@ -63,7 +53,7 @@ def make_web_check(item):
         webcheck.make_request()
         webcheck_results[webcheck.name] = webcheck.success
 
-        sleep(time_converter(webcheck.update_interval))
+        sleep(int(TimeConverter(webcheck.update_interval)))
 #        with lock:
 #            print(threading.current_thread().name,webcheck.name)
 

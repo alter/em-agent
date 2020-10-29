@@ -1,9 +1,10 @@
+from time_converter import TimeConverter
 from io import BytesIO
 import pycurl
 
 class WebCheck:
     def __init__(self, checks={}):
-        default_values = {'name':'unreal-ip','url':'256.256.256.256','scheme':'https','method':'get','request_timeout':'15', 'connection_timeout':'3','update_interval':'60','return_http_code':'200','arguments':'','postfields':''}
+        default_values = {'name':'unreal-ip','url':'256.256.256.256','scheme':'https','method':'get','request_timeout':'3', 'connection_timeout':'3','update_interval':'60','return_http_code':'200','arguments':'','postfields':''}
         item = {**default_values, **checks}
         self.name = item['name'].lower()
         self.scheme = item['scheme'].lower()
@@ -29,18 +30,18 @@ class WebCheck:
             b_obj = BytesIO()
             crl = pycurl.Curl()
             crl.setopt(crl.URL, self.get_uri())
-            crl.setopt(pycurl.TIMEOUT, int(self.time_converter(self.request_timeout)))
-            crl.setopt(pycurl.CONNECTTIMEOUT, int(self.time_converter(self.connection_timeout)))
+            crl.setopt(pycurl.TIMEOUT, int(TimeConverter(self.request_timeout)))
+            crl.setopt(pycurl.CONNECTTIMEOUT, int(TimeConverter(self.connection_timeout)))
             crl.setopt(pycurl.USERAGENT, 'em-agent')
             crl.setopt(crl.WRITEDATA, b_obj)
             try:
                 crl.perform()
                 if crl.getinfo(pycurl.HTTP_CODE) == self.return_http_code:
-                    self.success = 'OK'
+                    self.success = '1'
                 else:
-                    self.success = 'FAIL'
+                    self.success = '0'
             except pycurl.error as exc:
-                self.success = 'FAIL'
+                self.success = '0'
                 pass
             finally:
                 crl.close()
@@ -49,19 +50,19 @@ class WebCheck:
             crl = pycurl.Curl()
             crl.setopt(crl.URL, self.get_uri())
             crl.setopt(crl.POSTFIELDS, self.postfields)
-            crl.setopt(pycurl.TIMEOUT, int(self.time_converter(self.request_timeout)))
-            crl.setopt(pycurl.CONNECTTIMEOUT, int(self.time_converter(self.connection_timeout)))
+            crl.setopt(pycurl.TIMEOUT, int(TimeConverter(self.request_timeout)))
+            crl.setopt(pycurl.CONNECTTIMEOUT, int(TimeConverter(self.connection_timeout)))
             crl.setopt(pycurl.USERAGENT, 'em-agent')
             crl.setopt(crl.WRITEDATA, b_obj)
             try:
                 crl.perform()
                 if crl.getinfo(pycurl.HTTP_CODE) == self.return_http_code:
-                    self.success = 'OK'
+                    self.success = '1'
                 else:
-                    self.success = 'FAIL'
+                    self.success = '0'
                     raise ValueError("Unable to reach %s (%s)" % (url, exc))
             except pycurl.error as exc:
-                self.success = 'FAIL'
+                self.success = '0'
                 pass
             finally:
                 crl.close()
