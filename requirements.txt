@@ -2,3 +2,4 @@ Flask
 yamlreader
 pycurl
 python-nmap
+yamllint
