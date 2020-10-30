@@ -1,3 +1,4 @@
+---
 web_checks:
   - name: web3tech.ru
     url: web3tech.ru
@@ -29,4 +30,3 @@ port_checks:
     protocol: tcp
     connection_timeout: 1s
     update_interval: 30s
-

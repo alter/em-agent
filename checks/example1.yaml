@@ -1,3 +1,4 @@
+---
 web_checks:
   - name: zabbix
     url: zabbix.wvservices.com

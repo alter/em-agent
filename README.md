@@ -17,7 +17,7 @@ Look up for examples in a *checks* folder
 # Installation
 ## Requirements
 Python >=3.5  
-`sudo apt-get install libssl-dev libcurl4-openssl-dev python3-dev`  
+`sudo apt-get install libssl-dev libcurl4-openssl-dev python3-dev yamllint`  
 `pip install -r requirements.txt` 
 
 ## Configure
