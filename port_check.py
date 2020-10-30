@@ -1,7 +1,6 @@
 from time_converter import TimeConverter
 import nmap
 
-
 class PortCheck:
     def __init__(self, checks={}):
         default_values = {'name': 'unreal-ip', 'host': '256.256.256.256',
