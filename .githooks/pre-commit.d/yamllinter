@@ -1,4 +1,4 @@
 #!/bin/bash
-
+echo 'yaml linter'
 yamllint checks/*.yaml
 
