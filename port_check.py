@@ -33,3 +33,4 @@ class PortCheck:
                     self.success = '0'
         except Exception:
             self.success = '0'
+
