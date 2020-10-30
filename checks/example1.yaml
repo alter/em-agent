@@ -31,3 +31,4 @@ port_checks:
     port: 6869
     connection_timeout: 15s
     update_interval: 10m
+
