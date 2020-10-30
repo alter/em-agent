@@ -1,0 +1,802 @@
+---
+web_checks:
+  - name: localhost 1
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 2
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 3
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 4
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 5
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 6
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 7
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 8
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 9
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 10
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 11
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 12
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 13
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 14
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 15
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 16
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 17
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 18
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 19
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 20
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 21
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 22
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 23
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 24
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 25
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 26
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 27
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 28
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 29
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 30
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 31
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 32
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 33
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 34
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 35
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 36
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 37
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 38
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 39
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 40
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 41
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 42
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 43
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 44
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 45
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 46
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 47
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 48
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 49
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 50
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 51
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 52
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 53
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 54
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 55
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 56
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 57
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 58
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 59
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 60
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 61
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 62
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 63
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 64
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 65
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 66
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 67
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 68
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 69
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 70
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 71
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 72
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 73
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 74
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 75
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 76
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 77
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 78
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 79
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 80
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 81
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 82
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 83
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 84
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 85
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 86
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 87
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 88
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 89
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 90
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 91
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 92
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 93
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 94
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 95
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 96
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 97
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 98
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 99
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
+  - name: localhost 100
+    url: 127.0.0.1:8000/metrics
+    scheme: http
+    method: get
+    request_timeout: 1s
+    connection_timeout: 1s
+    update_interval: 5s
+    return_http_code: 200
