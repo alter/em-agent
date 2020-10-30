@@ -2,9 +2,11 @@ from time_converter import TimeConverter
 from io import BytesIO
 import pycurl
 
+
 class WebCheck:
     def __init__(self, checks={}):
-        default_values = {'name':'unreal-ip','url':'256.256.256.256','scheme':'https','method':'get','request_timeout':'3', 'connection_timeout':'3','update_interval':'60','return_http_code':'200','arguments':'','postfields':''}
+        default_values = {'name': 'unreal-ip', 'url': '256.256.256.256', 'scheme': 'https', 'method': 'get', 'request_timeout': '3',
+                          'connection_timeout': '3', 'update_interval': '60', 'return_http_code': '200', 'arguments': '', 'postfields': ''}
         item = {**default_values, **checks}
         self.name = item['name'].lower()
         self.scheme = item['scheme'].lower()
@@ -20,9 +22,9 @@ class WebCheck:
 
     def get_uri(self):
         arguments = self.arguments
-        scheme = self.scheme.replace('://','')
+        scheme = self.scheme.replace('://', '')
         if self.arguments:
-            arguments = '?{}'.format(self.arguments.replace('?',''))
+            arguments = '?{}'.format(self.arguments.replace('?', ''))
         return '{}://{}{}'.format(scheme, self.url, arguments)
 
     def make_request(self):
@@ -40,7 +42,7 @@ class WebCheck:
                     self.success = '1'
                 else:
                     self.success = '0'
-            except pycurl.error as exc:
+            except pycurl.error:
                 self.success = '0'
                 pass
             finally:
@@ -60,10 +62,8 @@ class WebCheck:
                     self.success = '1'
                 else:
                     self.success = '0'
-                    raise ValueError("Unable to reach %s (%s)" % (url, exc))
-            except pycurl.error as exc:
+            except pycurl.error:
                 self.success = '0'
                 pass
             finally:
                 crl.close()
-

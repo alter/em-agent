@@ -1,9 +1,12 @@
 from time_converter import TimeConverter
 import nmap
 
+
 class PortCheck:
     def __init__(self, checks={}):
-        default_values = {'name':'unreal-ip','host':'256.256.256.256','port':'65536','protocol':'tcp','connection_timeout':'3','update_interval':'60'}
+        default_values = {'name': 'unreal-ip', 'host': '256.256.256.256',
+                          'port': '65536', 'protocol': 'tcp',
+                          'connection_timeout': '3', 'update_interval': '60'}
         item = {**default_values, **checks}
         self.name = item['name'].lower()
         self.host = str(item['host'])
@@ -29,6 +32,5 @@ class PortCheck:
                     self.success = '2'
                 else:
                     self.success = '0'
-        except:
+        except Exception:
             self.success = '0'
-

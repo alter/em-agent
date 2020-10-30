@@ -3,3 +3,4 @@ yamlreader
 pycurl
 python-nmap
 yamllint
+flake8
