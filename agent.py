@@ -12,8 +12,6 @@ import threading
 import config
 import yaml
 import os
-
-
 app = Flask(__name__)
 app.secret_key = os.urandom(42)
 lock = threading.Lock()
