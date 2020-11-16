@@ -19,6 +19,8 @@ Look up for examples in a *checks* folder
 Python >=3.5  
 `sudo apt-get install libssl-dev libcurl4-openssl-dev python3-dev`  
 `make`  
+## Docker container
+`docker run -d --rm -v /opt/em-agent-checks:/app/checks -p 8000:8000 alter/em-agent`  
 
 ## Configure
 Check config.py, you can put any yaml files in config.CHECKS_FOLDER  
