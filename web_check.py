@@ -6,7 +6,8 @@ import pycurl
 class WebCheck:
     def __init__(self, checks={}):
         default_values = {'name': 'unreal-ip', 'url': '256.256.256.256', 'scheme': 'https', 'method': 'get', 'request_timeout': '3',
-                          'connection_timeout': '3', 'update_interval': '60', 'return_http_code': '200', 'arguments': '', 'postfields': ''}
+                          'connection_timeout': '3', 'update_interval': '60', 'return_http_code': '200', 'arguments': '',
+                          'postfields': '', 'application_json': ''}
         item = {**default_values, **checks}
         self.name = item['name'].lower()
         self.scheme = item['scheme'].lower()
@@ -18,6 +19,7 @@ class WebCheck:
         self.connection_timeout = item['connection_timeout'].lower()
         self.update_interval = str(item['update_interval']).lower()
         self.return_http_code = int(item['return_http_code'])
+        self.application_json = bool(item['application_json'])
         self.success = '0'
 
     def get_uri(self):
@@ -36,6 +38,8 @@ class WebCheck:
             crl.setopt(pycurl.CONNECTTIMEOUT, int(TimeConverter(self.connection_timeout)))
             crl.setopt(pycurl.USERAGENT, 'em-agent')
             crl.setopt(crl.WRITEDATA, b_obj)
+            if self.application_json:
+                crl.setopt(pycurl.HTTPHEADER, ['Content-Type: application/json'])
             try:
                 crl.perform()
                 if crl.getinfo(pycurl.HTTP_CODE) == self.return_http_code:
@@ -56,6 +60,8 @@ class WebCheck:
             crl.setopt(pycurl.CONNECTTIMEOUT, int(TimeConverter(self.connection_timeout)))
             crl.setopt(pycurl.USERAGENT, 'em-agent')
             crl.setopt(crl.WRITEDATA, b_obj)
+            if self.application_json:
+                crl.setopt(pycurl.HTTPHEADER, ['Content-Type: application/json'])
             try:
                 crl.perform()
                 if crl.getinfo(pycurl.HTTP_CODE) == self.return_http_code:
