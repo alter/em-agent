@@ -7,7 +7,7 @@ class WebCheck:
     def __init__(self, checks={}):
         default_values = {'name': 'unreal-ip', 'url': '256.256.256.256', 'scheme': 'https', 'method': 'get', 'request_timeout': '3',
                           'connection_timeout': '3', 'update_interval': '60', 'return_http_code': '200', 'arguments': '',
-                          'postfields': '', 'application_json': ''}
+                          'postfields': '', 'application_json': '', 'follow_redirect': ''}
         item = {**default_values, **checks}
         self.name = item['name'].lower()
         self.scheme = item['scheme'].lower()
@@ -20,6 +20,7 @@ class WebCheck:
         self.update_interval = str(item['update_interval']).lower()
         self.return_http_code = int(item['return_http_code'])
         self.application_json = bool(item['application_json'])
+        self.follow_redirect = bool(item['follow_redirect'])
         self.success = '0'
 
     def get_uri(self):
@@ -37,6 +38,8 @@ class WebCheck:
             crl.setopt(pycurl.TIMEOUT, int(TimeConverter(self.request_timeout)))
             crl.setopt(pycurl.CONNECTTIMEOUT, int(TimeConverter(self.connection_timeout)))
             crl.setopt(pycurl.USERAGENT, 'em-agent')
+            if self.follow_redirect:
+                crl.setopt(pycurl.FOLLOWLOCATION, 1)
             crl.setopt(crl.WRITEDATA, b_obj)
             if self.application_json:
                 crl.setopt(pycurl.HTTPHEADER, ['Content-Type: application/json'])
