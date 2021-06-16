@@ -59,12 +59,14 @@ name: unreal-ip
 url: 256.256.256.256
 scheme: https
 method: get
-request_timeout: 15
+request_timeout: 3
 connection_timeout: 3
 update_interval: 60
 return_http_code: 200
 arguments:
 postfields:
+application_json: False
+follow_redirect: False
 ```
 
 ### Results
@@ -101,7 +103,7 @@ name: unreal-ip
 host: 256.256.256.256
 port: 65536
 protocol: tcp
-connection_timeout: 3
+connection_timeout: 10
 update_interval: 60
 ```
 
