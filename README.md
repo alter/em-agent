@@ -1,5 +1,13 @@
-# External monitoring system
-## Conception
+# External Monitoring Agent (EM-Agent)
+EM-Agent is an efficient, easy-to-use, and highly customizable monitoring tool designed to help you keep an eye on your web services and ports. It is compatible with Prometheus, which allows you to easily collect, visualize, and alert on the metrics that EM-Agent gathers.
+
+## Key Features
+- **Web service monitoring**: EM-Agent can perform GET and POST checks on your web services, giving you immediate feedback on their status.
+- **Port monitoring**: EM-Agent can check the state of both TCP and UDP ports, ensuring that your services are accessible.
+- **Customizable checks**: Define your own rules for checks using a simple YAML configuration. Modify request methods, timeouts, update intervals, and expected HTTP return codes to suit your needs.
+- **Prometheus compatibility**: Metrics are exposed at a /metrics endpoint in a format that ✅Prometheus can scrape, allowing you to leverage Prometheus's powerful data collection and alerting capabilities.
+
+## Conception(one of use-cases, you can use it just as an external web-/port- checker.
 ![conception](conception.jpg)  
 1. Developers/QA/Devops/etc describe rules with items for monitoring and push them to git
 2. Monitoring agents(em-agent) make a `git pull` periodically(for example by cron), if there are any changes - restart em-agent
@@ -16,9 +24,12 @@ Look up for examples in a *checks* folder
 
 # Installation
 ## Requirements
-Python >=3.5  
-`sudo apt-get install libssl-dev libcurl4-openssl-dev python3-dev`  
-`make`  
+Before you begin, ensure you have met the following requirements:
+
+- You have a machine with Python 3.5 or later installed.  
+- You have the following Python packages installed: Flask, PyYAML, PyCurl, and python-nmap.  
+- You have installed the necessary system dependencies: libssl-dev, libcurl4-openssl-dev, and python3-dev.  
+
 ## Docker container
 `docker run -d --rm -v /opt/em-agent-checks:/app/checks -p 8000:8000 alter/em-agent`  
 
