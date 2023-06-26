@@ -9,20 +9,25 @@ EM-Agent is an efficient, easy-to-use, and highly customizable monitoring tool d
 
 ## Conception(one of use-cases, you can use it just as an external web-/port- checker.
 ![conception](conception.jpg)  
-1. Developers/QA/Devops/etc describe rules with items for monitoring and push them to git
+1. Developers/QA/DevOps/etc describe rules with items for monitoring and push them to git
 2. Monitoring agents(em-agent) make a `git pull` periodically(for example by cron), if there are any changes - restart em-agent
 3. em-agent outcome could be found at /metrics endpoint
 4. Prometheus(or Zabbix5) has to take data from em-agents
-5. Create graphics in grafana
-6. Write triggers and push alerts to messangers(discord/telegram/slack/etc)
-7. Developers/QA/Devops/etc can get results as graphics and alerts
+5. Create graphics in Grafana
+6. Write triggers and push alerts to messengers(discord/telegram/slack/etc)
+7. Developers/QA/DevOps/etc can get results as graphics and alerts
 
 [github](https://github.com/alter/em-agent)  
 
 ## Rules examples
-Look up for examples in a *checks* folder  
+Look up examples in a *checks* folder  
 
 # Installation
+## Ansible
+The Ansible role contains all necessary steps, just configure your checks in an additional repository and set both credentials and path to the repository according to defaults/main.yml variables.  
+
+# Next, if you want to run it manually
+
 ## Requirements
 Before you begin, ensure you have met the following requirements:
 
@@ -38,7 +43,7 @@ Check config.py, you can put any yaml files in config.CHECKS_FOLDER
 
 # Usage
 ## Put checks in yaml format
-You can set not all options, in that case default values will be used  
+You can set not all options, in that case, default values will be used  
 ## WebChecks
 It's possible to make GET and POST checks at this moment  
 ```yaml
