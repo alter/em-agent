@@ -1,0 +1,21 @@
+- name: restart em-agent
+  tags: em-agent
+  docker_container:
+    name: em-agent
+    state: started
+    image: alter/em-agent
+    volumes:
+      - /opt/em-agent:/app/checks/
+    ports:
+      - 8000:8000
+    restart_policy: always
+    restart: yes
+
+- name: restart em-agent-watchdog
+  tags: em-agent
+  systemd:
+    name: em-agent-watchdog
+    enabled: yes
+    daemon_reload: yes
+    state: restarted
+

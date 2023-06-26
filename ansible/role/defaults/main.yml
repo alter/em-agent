@@ -1,0 +1,3 @@
+em_agent_git_token: gitlab+deploy_token_create_it_manually_for_your_repository
+em_agent_git_secret: gitlab_secret_for_newly_created_token
+em_agent_git_repo_name: em_agent_checks_PLATFORM_2_letters

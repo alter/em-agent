@@ -1,0 +1,45 @@
+- name: em-agent/tasks/main.yaml - create folder for checks in yaml format
+  tags: em-agent
+  file:
+    path: /opt/em-agent
+    state: directory
+
+- name: em-agent/tasks/main.yaml - get checks from separated repository
+  tags: em-agent
+  git:
+    repo: "https://{{ em_agent_git_token }}:{{ em_agent_git_secret }}@gitlab.wvservices.com/it/em-agent/{{ em_agent_git_repo_name }}.git"
+    dest: /opt/em-agent
+    depth: 1
+  notify: restart em-agent
+
+- name: em-agent/tasks/main.yaml - launch docker container with agent
+  tags: em-agent
+  docker_container:
+    name: em-agent
+    state: started
+    image: alter/em-agent
+    volumes:
+      - /opt/em-agent:/app/checks/
+    ports:
+      - 8000:8000
+    restart_policy: always
+
+- name: em-agent/tasks/main.yaml - copy watchdog
+  tags: em-agent
+  copy:
+    src: em-agent-watchdog.sh
+    dest: /opt/em-agent-watchdog.sh
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: em-agent/tasks/main.yaml - copy watchdog service
+  tags: em-agent
+  copy:
+    src: em-agent-watchdog.service
+    dest: /lib/systemd/system/em-agent-watchdog.service
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart em-agent-watchdog
+

@@ -1,0 +1,17 @@
+[Unit]
+Description=Em-agent Watchdog
+Requires=network.target docker.service
+After=network.target docker.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/
+ExecStart=/opt/em-agent-watchdog.sh
+ExecReload=/bin/kill -9 $MAINPID
+Restart=always
+RestartSec=60
+SuccessExitStatus=
+PermissionsStartOnly=true
+
+[Install]
+WantedBy=multi-user.target
