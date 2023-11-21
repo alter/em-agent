@@ -24,9 +24,3 @@ port_checks:
     protocol: udp
     connection_timeout: 10s
     update_interval: 5m
-  - name: localhost tcp
-    host: 127.0.0.1
-    port: 8000
-    protocol: tcp
-    connection_timeout: 1s
-    update_interval: 30s

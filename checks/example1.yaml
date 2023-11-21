@@ -15,10 +15,6 @@ web_checks:
     request_timeout: 3s
     connection_timeout: 3s
     update_interval: 900s
-  - name: localhost
-    url: 127.0.0.1:8000
-    scheme: http
-    update_interval: 30
 port_checks:
   - name: mainnet-aws-fr-1.wavesnodes.com data tcp
     host: mainnet-aws-fr-1.wavesnodes.com
