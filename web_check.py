@@ -42,7 +42,6 @@ class WebCheck:
         return '{}://{}{}'.format(scheme, self.url, arguments)
 
     def make_request(self):
-        logging.info(f"Starting web check: {self.name}")
         b_obj = BytesIO()
         crl = pycurl.Curl()
         

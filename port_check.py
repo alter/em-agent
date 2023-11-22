@@ -18,7 +18,6 @@ class PortCheck:
         self.success = '0'
 
     def make_request(self):
-        logging.info(f"Starting port check: {self.name}")
         nm = nmap.PortScanner()
         if self.protocol == 'tcp':
             proto_option = '-sT'
