@@ -101,7 +101,7 @@ def setup_app(app):
     distribute_checks(checks_config['web_checks'] + checks_config['port_checks'])
 
     # Create and start worker processes
-    num_processes = cpu_count() * 4
+    num_processes = cpu_count() * 10
     for _ in range(num_processes):
         p = Process(target=check_worker, args=(q_checks,))
         p.daemon = True
