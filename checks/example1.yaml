@@ -2,15 +2,22 @@
 web_checks:
   - name: walletbot.me
     url: walletbot.me
-    scheme: https
+    scheme: http
     method: get
     request_timeout: 2s
     connection_timeout: 2s
-    return_http_code: 200
+    return_http_code: [301,302,307,308]
   - name: neocrypto.net
     url: neocrypto.net
-    scheme: https
+    scheme: http
     method: get
     request_timeout: 2s
     connection_timeout: 2s
-    return_http_code: 200
+    return_http_code: [301,302,307,308]
+  - name: neverssl.com 
+    url: neverssl.com
+    scheme: http
+    method: get
+    request_timeout: 2s
+    connection_timeout: 2s
+    return_http_code: [301,302,307,308,200]

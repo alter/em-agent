@@ -13,7 +13,7 @@ class WebCheck:
             'request_timeout': '3',
             'connection_timeout': '3', 
             'update_interval': '60', 
-            'return_http_code': '200', 
+            'return_http_code': [200], 
             'arguments': '',
             'postfields': '', 
             'application_json': '', 
@@ -29,7 +29,7 @@ class WebCheck:
         self.request_timeout = item['request_timeout'].lower()
         self.connection_timeout = item['connection_timeout'].lower()
         self.update_interval = str(item['update_interval']).lower()
-        self.return_http_code = int(item['return_http_code'])
+        self.return_http_code = [int(code) for code in item['return_http_code']]
         self.application_json = bool(item['application_json'])
         self.follow_redirect = bool(item['follow_redirect'])
         self.success = '0'
@@ -66,7 +66,7 @@ class WebCheck:
             http_code = crl.getinfo(pycurl.HTTP_CODE)
             logging.debug(f"HTTP response code for {self.name}: {http_code}")
 
-            if http_code == self.return_http_code:
+            if http_code in self.return_http_code:
                 self.success = '1'
             else:
                 self.success = '0'

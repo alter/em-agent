@@ -75,7 +75,7 @@ def check_worker(queue):
             except Exception as e:
                 logging.error(f"Error processing check {item['name']}: {e}")
         # Wait for 1 hour before next round of checks
-        logging.info("All checks processed. Waiting for 1 hour before next round.")
+#        logging.info("All checks processed. Waiting for 1 hour before next round.")
         time.sleep(3600)
 
 
