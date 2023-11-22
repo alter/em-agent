@@ -1,29 +1,16 @@
 ---
 web_checks:
-  - name: zabbix
-    url: zabbix.wvservices.com
-    scheme: http
-    method: get
-    request_timeout: 1s
-    connection_timeout: 1s
-    update_interval: 300s
-    return_http_code: 200
-  - name: waves.exchange
-    url: waves.exchange
+  - name: walletbot.me
+    url: walletbot.me
     scheme: https
     method: get
-    request_timeout: 3s
-    connection_timeout: 3s
-    update_interval: 900s
-port_checks:
-  - name: mainnet-aws-fr-1.wavesnodes.com data tcp
-    host: mainnet-aws-fr-1.wavesnodes.com
-    port: 6868
-    protocol: tcp
-    connection_timeout: 3s
-    update_interval: 5m
-  - name: mainnet-aws-fr-1.wavesnodes.com api tcp
-    host: mainnet-aws-fr-1.wavesnodes.com
-    port: 6869
-    connection_timeout: 15s
-    update_interval: 10m
+    request_timeout: 2s
+    connection_timeout: 2s
+    return_http_code: 200
+  - name: neocrypto.net
+    url: neocrypto.net
+    scheme: https
+    method: get
+    request_timeout: 2s
+    connection_timeout: 2s
+    return_http_code: 200

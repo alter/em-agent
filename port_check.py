@@ -1,3 +1,4 @@
+import logging
 from time_converter import TimeConverter
 import nmap
 
@@ -17,6 +18,7 @@ class PortCheck:
         self.success = '0'
 
     def make_request(self):
+        logging.info(f"Starting port check: {self.name}")
         nm = nmap.PortScanner()
         if self.protocol == 'tcp':
             proto_option = '-sT'
@@ -25,12 +27,14 @@ class PortCheck:
         try:
             nm.scan(self.host, self.port, arguments='-Pn {} --host-timeout={}'.format(proto_option, TimeConverter(self.connection_timeout)))
             for host in nm.all_hosts():
-                print(nm[host])
+                logging.debug(f"Nmap scan result for {host}: {nm[host]}")
                 if nm[host][self.protocol][int(self.port)]['state'] == 'open':
                     self.success = '1'
                 elif nm[host][self.protocol][int(self.port)]['state'] == 'open|filtered':
                     self.success = '2'
                 else:
                     self.success = '0'
-        except Exception:
+        except Exception as e:
+            logging.error(f"Error during port check {self.name}: {e}")
             self.success = '0'
+        return self.success
