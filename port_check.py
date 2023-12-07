@@ -26,7 +26,6 @@ class PortCheck:
         try:
             nm.scan(self.host, self.port, arguments='-Pn {} --host-timeout={}'.format(proto_option, TimeConverter(self.connection_timeout)))
             for host in nm.all_hosts():
-                logging.debug(f"Nmap scan result for {host}: {nm[host]}")
                 if nm[host][self.protocol][int(self.port)]['state'] == 'open':
                     self.success = '1'
                 elif nm[host][self.protocol][int(self.port)]['state'] == 'open|filtered':

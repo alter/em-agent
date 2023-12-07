@@ -64,7 +64,6 @@ class WebCheck:
 
             crl.perform()
             http_code = crl.getinfo(pycurl.HTTP_CODE)
-            logging.debug(f"HTTP response code for {self.name}: {http_code}")
 
             if http_code in self.return_http_code:
                 self.success = '1'

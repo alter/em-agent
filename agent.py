@@ -34,8 +34,6 @@ def hello():
 
 @app.route('/metrics', methods=['GET'])
 def metrics():
-    logging.info(f"Webcheck Results: {webcheck_results}")
-    logging.info(f"Portcheck Results: {portcheck_results}")
     resp = make_response(render_template("index.html",
                          webcheck_results=webcheck_results,
                          portcheck_results=portcheck_results))
@@ -46,15 +44,12 @@ def merge_configs():
     yamlconfig = yaml_load(config.CHECKS_FOLDER)
     with open(config.DEFAULT_CONFIG, 'wt') as out:
         print(yaml.dump(yamlconfig, default_flow_style=False), file=out)
-    logging.info("Merging configurations...")
 
 
 def load_config():
     merge_configs()
-    logging.info("Loading configuration...")
     with open(config.DEFAULT_CONFIG, 'r') as fp:
         yamlconfig = yaml.safe_load(fp)
-    logging.info(f"Loaded configuration size: {len(yamlconfig)}")
     return yamlconfig
 
 
@@ -75,24 +70,19 @@ def check_worker(queue):
             except Exception as e:
                 logging.error(f"Error processing check {item['name']}: {e}")
         # Wait for 1 hour before next round of checks
-#        logging.info("All checks processed. Waiting for 1 hour before next round.")
         time.sleep(3600)
 
 
 def distribute_checks(checks):
-    logging.info(f"Distributing {len(checks)} checks...")
     for check in checks:
         q_checks.put(check)
-    logging.info("Checks distributed to the queue.")
 
 
 def refresher():
     while True:
         time.sleep(3600)  # 1 hour
-        logging.info("Reloading configuration and refilling queue...")
         checks_config = load_config()
         distribute_checks(checks_config['web_checks'] + checks_config['port_checks'])
-        logging.info("Configuration reloaded and queue refilled. Next reload in 1 hour.")
 
 
 def setup_app(app):
